@@ -1,2 +1,2 @@
 # coronavirus-tracker
-Project to learn how to use Spring Boot
+Project to learn how to make a website with Spring Boot.
