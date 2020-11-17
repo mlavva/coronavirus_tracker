@@ -25,6 +25,7 @@ public class CoronaVirusDataService {
     private static String VIRUS_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/who_covid_19_situation_reports/who_covid_19_sit_rep_time_series/who_covid_19_sit_rep_time_series.csv";
 
     private List<LocationStats> allStats = new ArrayList<>();
+
     @PostConstruct
     @Scheduled(cron = "* * 1 * * *")
     public void fetchVirusData() throws IOException, InterruptedException {
@@ -51,5 +52,9 @@ public class CoronaVirusDataService {
             System.out.println(locationStat);
             newStats.add(locationStat);
         }
+        this.allStats = newStats;
+    }
+    public List<LocationStats> getAllStats() {
+        return allStats;
     }
 }
